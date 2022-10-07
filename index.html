@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- fonts family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="box">
+        <div class="header">
+            <h1>Weather App</h1>
+        </div>
+
+        <!-- input fields -->
+        <div class="upper-box">
+            <div class="input-box">
+                <input type="text" id="city" placeholder="Enter city name" class="input">
+            </div>
+            
+            <div class="input-box">
+                <button onclick="search()" class="input">Search</button>
+            </div>
+        </div>
+
+        <!-- output fields -->
+        <div class="lower-box">
+            <div class="details-box temp-box">
+                Temperature  
+                <span id="temp">___</span>
+            </div>
+            <div class="details-box">
+                Weather <span id="weather">___</span>
+            </div>
+            <div class="details-box">
+                Humidity <span  id="humidity">___</span>
+            </div>
+            <div class="details-box">
+                Pressure  <span id="pressure">___</span>
+            </div>
+            <div class="details-box">
+                Wind Speed <span id="wind">___</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
