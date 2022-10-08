@@ -83,3 +83,14 @@ body {
     padding: 10px;
 }
 
+/* media queries */
+@media only screen and (max-width: 420px) {
+    .upper-box {
+        flex-direction: column;
+    }
+    .upper-box input {
+        display: inline-block;
+        width: 100%;
+    }
+}
+
