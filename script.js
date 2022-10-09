@@ -6,6 +6,9 @@ const humidityField = document.getElementById('humidity');
 const pressureField = document.getElementById('pressure');
 const windField = document.getElementById('wind');
 
+// Clears the input field, when refreshing the page.
+cityField.value = ''
+
 let cityName = "";
 let temp = "";
 let humidity = "";
@@ -26,6 +29,12 @@ cityField.addEventListener("keyup", function(event) {
 
 function search() {
     cityName = cityField.value;
+    // For empty search clicks
+    if(!cityName) {
+      cityErrorMessage.classList.remove('hide');
+      hideDetails();
+      return;
+    }
     console.log(cityName);
     fetchData(cityName);
 }
@@ -35,10 +44,12 @@ function fetchData(cityName) {
     fetch(url)
     .then((response) => { return response.json()})
     .then((data) => {
-        if(data.cod === "404") {
-            cityErrorMessage.classList.remove("hide");
-            return;
-        };
+      // Checking for cod !== 200 : As there could be other cod errors like 400, 401 etc.
+      if (data.cod !== 200) {
+        cityErrorMessage.classList.remove('hide');
+        hideDetails();
+        return;
+      }
 
         console.log(data);
         temp = data.main["temp"];
@@ -55,9 +66,22 @@ function fetchData(cityName) {
 }
 
 function showDetails() {
-    tempField.innerHTML = temp + '&#176;' + 'C';
-    weatherField.innerHTML = weather;
-    humidityField.innerHTML = humidity + '%';
-    pressureField.innerHTML = pressure + ' mb';
-    windField.innerHTML = windSpeed + ' km/h';
+  tempField.innerHTML = temp + '&#176;' + 'C';
+  weatherField.innerHTML = weather;
+  humidityField.innerHTML = humidity + '%';
+  pressureField.innerHTML = pressure + ' mb';
+  windField.innerHTML = windSpeed + ' km/h';
+}
+
+function hideDetails() {
+  temp = '';
+  humidity = '';
+  pressure = '';
+  weather = '';
+  windSpeed = '';
+  tempField.innerHTML = '___';
+  weatherField.innerHTML = '___';
+  humidityField.innerHTML = '___';
+  pressureField.innerHTML = '___';
+  windField.innerHTML = '___';
 }
