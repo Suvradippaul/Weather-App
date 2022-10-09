@@ -47,6 +47,14 @@ body {
     border: none;
 }
 
+.city-not-found {
+    color: red;
+}
+
+.hide {
+    display: none;
+}
+
 .input-box button {
     padding-left: 20px;
     padding-right: 20px;
