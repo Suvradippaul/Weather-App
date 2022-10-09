@@ -5,8 +5,19 @@ A very simple Weather App built with HTML, CSS, Vanilla Javascript and OpenWeath
 ### OpenWeatherMap API
 [_OpenWeatherMap API_](https://openweathermap.org/api) is an easy-to-use, fast and free weather API from [OpenWeatherMap](https://openweathermap.org/). It provides current weather data for any location including over 200,000 cities.
 
-## Screenshots
+## [Screenshots](/Screenshots/)
 Take a look at few screenshots of this project.
+<br>
+<img
+  src="Screenshots/Screenshot2.png"
+  alt="When a valid city is entered"
+  title="When a valid city is entered"
+  style="display: inline-block; margin: 0 auto; width: 49%">
+<img
+  src="Screenshots/Screenshot1.png"
+  alt="When an invalid input is entered"
+  title="When an invalid input is entered"
+  style="display: inline-block; margin: 0 auto; width: 49%">
 
 
 ## To-Do Tasks 
@@ -15,7 +26,7 @@ Take a look at few screenshots of this project.
 - [ ] Image/Logo for each Weather Parameters
 - [ ] Will be adding more
 
-## [Contributions]()🚀
+## [Contributions](CONTRIBUTIONS.md)🚀
 This is an open sourced project and contributions are most welcome.
 Please follow the steps to start contributing to this project.
 * Fork the repository.
@@ -45,5 +56,5 @@ Please follow the steps to start contributing to this project.
   ```
 * Go to the [repository](https://github.com/Suvradippaul/Weather-App) and make a Pull Request.
 
-## [License]()
-This project is licensed under the terms of the [MIT license](/LICENSE).
+## [License](LICENSE.md)
+This project is licensed under the terms of the [MIT license](LICENSE.md).
