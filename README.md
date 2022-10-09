@@ -9,17 +9,15 @@ A very simple Weather App built with HTML, CSS, Vanilla Javascript and OpenWeath
 Take a look at few screenshots of this project.
 <br>
 <img
-  src="Screenshots/Screenshot1.png"
-  alt="Alt text"
-  title="Optional title"
-  style="display: inline-block; margin: 0 auto; width: 49%"
->
-<img
   src="Screenshots/Screenshot2.png"
-  alt="Alt text"
-  title="Optional title"
-  style="display: inline-block; margin: 0 auto; width: 49%"
->
+  alt="When a valid city is entered"
+  title="When a valid city is entered"
+  style="display: inline-block; margin: 0 auto; width: 49%">
+<img
+  src="Screenshots/Screenshot1.png"
+  alt="When an invalid input is entered"
+  title="When an invalid input is entered"
+  style="display: inline-block; margin: 0 auto; width: 49%">
 
 
 ## To-Do Tasks 
