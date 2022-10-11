@@ -72,7 +72,7 @@ body {
     color: #9ca3af;
 }
 
-#city:focus { 
+#city:focus {
     outline: none;
     border-color: #2f71f4;
     box-shadow: 0 0 1px 1.5px #2f71f4;
@@ -81,7 +81,7 @@ body {
 .lower-box {
     /* border: 1px solid white; */
     display: block;
-    width: 100%;  
+    width: 100%;
 }
 
 .details-box {
@@ -96,9 +96,9 @@ body {
     .upper-box {
         flex-direction: column;
     }
+
     .upper-box input {
         display: inline-block;
         width: 100%;
     }
 }
-
