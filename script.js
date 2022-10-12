@@ -2,6 +2,7 @@ const cityField = document.getElementById('city');
 const cityErrorMessage = document.getElementById('city-error-message');
 const locationField = document.getElementById('location');
 const tempField = document.getElementById('temp');
+const feelsLikeField = document.getElementById('feels-like');
 const weatherField = document.getElementById('weather');
 const humidityField = document.getElementById('humidity');
 const pressureField = document.getElementById('pressure');
@@ -12,6 +13,7 @@ cityField.value = '';
 
 let cityName = "";
 let temp = "";
+let feels_like_temp = "";
 let humidity = "";
 let pressure = "";
 let weather = "";
@@ -56,7 +58,9 @@ function fetchData(cityName) {
       locationName = data.name + ', ' + data.sys['country'];
       temp = data.main["temp"];
       // converting Kelvin to Celsius upto 2 decimal digits
-      temp = Math.round((temp - 273.15));
+      temp = Math.round(temp - 273.15);
+      feels_like_temp = data.main["feels_like"];
+      feels_like_temp = Math.round(feels_like_temp - 273.5);
       humidity = data.main["humidity"];
       pressure = data.main["pressure"];
       iconId = data.weather[0]["icon"];
@@ -70,6 +74,7 @@ function fetchData(cityName) {
 function showDetails() {
   locationField.innerHTML = locationName;
   tempField.innerHTML = temp + '&#176;' + 'C';
+  feelsLikeField.innerHTML = 'Feels like ' + feels_like_temp + '&deg;C';
   weatherField.innerHTML = weather;
   humidityField.innerHTML = humidity + '%';
   pressureField.innerHTML = pressure + ' mb';
