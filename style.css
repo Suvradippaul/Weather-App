@@ -124,6 +124,10 @@ body {
     font-size: 15px;
 }
 
+.sunrise-sunset {
+    justify-content: space-around;
+}
+
 /* media queries */
 @media only screen and (max-width: 420px) {
     .upper-box {
