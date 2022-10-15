@@ -24,7 +24,8 @@ let weather = "";
 let windSpeed = "";
 let locationName = "";
 
-
+// use your own API Key
+const KEY = '5313e5a818e901ec38916f96eab76e8d';
 
 cityField.addEventListener("keyup", function (event) {
   if (event.key === "Enter") {
@@ -46,12 +47,10 @@ function search() {
 }
 
 function fetchData(cityName) {
-  const url = `.netlify/functions/fetch-weather?cityName=${cityName}`
+  const url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + KEY;
   fetch(url)
-    .then(response => response.json() )
-    .then((json) => {
-      const data = json.res
-
+    .then((response) => { return response.json() })
+    .then((data) => {
       // Checking for cod !== 200 : As there could be other cod errors like 400, 401 etc.
       if (data.cod !== 200) {
         locationField.innerHTML = 'City not found';
