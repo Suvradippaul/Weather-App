@@ -47,7 +47,7 @@ function search() {
 }
 
 function fetchData(cityName) {
-  const url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + KEY;
+  const url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=metric&appid=" + KEY;
   fetch(url)
     .then((response) => { return response.json() })
     .then((data) => {
@@ -60,19 +60,17 @@ function fetchData(cityName) {
 
       console.log(data);
       locationName = data.name + ', ' + data.sys['country'];
-      temp = data.main["temp"];
-      // converting Kelvin to Celsius upto 2 decimal digits
-      temp = Math.round(temp - 273.15);
-      feels_like_temp = data.main["feels_like"];
-      feels_like_temp = Math.round(feels_like_temp - 273.5);
+      temp = parseInt(data.main["temp"]);
+      feels_like_temp = parseInt(data.main["feels_like"]);
+
       sunrise = convertToTime(data.sys["sunrise"]);
       sunset = convertToTime(data.sys["sunset"]);
       humidity = data.main["humidity"];
       pressure = data.main["pressure"];
       iconId = data.weather[0]["icon"];
       weather = capitalise(data.weather[0]["description"]);
-      // converting wind speed from m/s to km/hr
-      windSpeed = (data.wind["speed"] * 3.6).toFixed(2);
+
+      windSpeed = data.wind["speed"];
       showDetails();
     })
 }
@@ -86,7 +84,7 @@ function showDetails() {
   weatherField.innerHTML = weather;
   humidityField.innerHTML = humidity + '%';
   pressureField.innerHTML = pressure + ' mb';
-  windField.innerHTML = windSpeed + ' km/h';
+  windField.innerHTML = windSpeed + ' m/s';
 }
 
 function hideDetails() {
