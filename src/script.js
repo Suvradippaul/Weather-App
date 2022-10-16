@@ -78,6 +78,7 @@ function fetchData(cityName) {
 }
 
 function showDetails() {
+  updateImage();
   locationField.innerHTML = locationName;
   tempField.innerHTML = temp + '&#176;' + 'C';
   feelsLikeField.innerHTML = 'Feels like ' + feels_like_temp + '&deg;C';
@@ -100,6 +101,25 @@ function hideDetails() {
   humidityField.innerHTML = '___';
   pressureField.innerHTML = '___';
   windField.innerHTML = '___';
+}
+
+const updateImage = () => {
+  let tempBox = document.querySelector(".temp-box"),
+      oldImage = document.getElementById("icon");
+  
+  if (!tempBox) {
+    return;
+  }
+  
+  if (oldImage) { 
+    tempBox.removeChild(oldImage);
+  }
+
+  let img = document.createElement("img");
+  img.setAttribute("src", `http://openweathermap.org/img/w/${iconId}.png`);
+  img.setAttribute("id", "icon");
+  img.setAttribute("alt", weather || "weatherIcon");
+  tempBox.appendChild(img);
 }
 
 const convertToTime = (timestamp) => {
