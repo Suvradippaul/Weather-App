@@ -136,3 +136,11 @@ const capitalise = (sentence) => {
 
 
 
+const toggleTheme = () => {
+  let switchElement = document.querySelector("body")
+  if(switchElement.classList.contains("light-theme")) {
+    switchElement.classList.remove("light-theme")
+  } else {
+    switchElement.classList.add("light-theme")
+  }
+}
