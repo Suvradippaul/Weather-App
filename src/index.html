@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 
     <title>Weather App</title>
+    <link rel="stylesheet" href="theme-switch.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -19,6 +20,14 @@
     <div class="box">
         <div class="header">
             <h1>Weather App</h1>
+        </div>
+
+        <!-- Theme Switch -->
+        <div class="theme-toggle">
+            <label class="switch">
+                <input type="checkbox" onClick="toggleTheme()" checked>
+                <span class="slider round"></span>
+            </label>
         </div>
 
         <!-- input fields -->

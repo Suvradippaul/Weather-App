@@ -5,22 +5,32 @@
     font-family: 'Poppins', sans-serif;
 }
 
+:root {
+    --background: #111827;
+    --text: #d1d5db;
+}
+
 body {
     display: flex;
     min-height: 100vh;
     justify-content: center;
     align-items: center;
-    background: #111827;
+    background: var(--background);
+}
+
+body.light-theme {
+    --background: #d1d5db;
+    --text: #111827;
 }
 
 .box {
     border-radius: 10px;
-    background-color: #111827;
+    background-color: var(--background);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #d1d5db;
+    color: var(--text);
     border: 1px solid #374151;
 }
 
