@@ -68,27 +68,25 @@ function fetchData(cityName) {
       locationName = data.name + ', ' + data.sys['country'];
       temp = parseInt(data.main['temp']);
       feels_like_temp = parseInt(data.main['feels_like']);
-
       sunrise = convertToTime(data.sys['sunrise']);
       sunset = convertToTime(data.sys['sunset']);
       humidity = data.main['humidity'];
       pressure = data.main['pressure'];
       iconId = data.weather[0]['icon'];
       weather = capitalise(data.weather[0]['description']);
-
       windSpeed = data.wind['speed'];
       showDetails();
     });
 }
 
 function showDetails() {
-  updateImage();
   locationField.innerHTML = locationName;
+  weatherField.innerHTML = weather;
   tempField.innerHTML = temp + '&#176;' + 'C';
   feelsLikeField.innerHTML = 'Feels like ' + feels_like_temp + '&deg;C';
+  updateImage();
   sunriseField.innerHTML = sunrise;
   sunsetField.innerHTML = sunset;
-  weatherField.innerHTML = weather;
   humidityField.innerHTML = humidity + '%';
   pressureField.innerHTML = pressure + ' mb';
   windField.innerHTML = windSpeed + ' m/s';
@@ -105,9 +103,11 @@ function hideDetails() {
   humidityField.innerHTML = '___';
   pressureField.innerHTML = '___';
   windField.innerHTML = '___';
+  let icon = document.getElementById('icon');
+  if (icon) document.querySelector('.temp-box').removeChild(icon);
 }
 
-const updateImage = () => {
+const updateImage = async () => {
   let tempBox = document.querySelector('.temp-box'),
     oldImage = document.getElementById('icon');
 
@@ -119,11 +119,19 @@ const updateImage = () => {
     tempBox.removeChild(oldImage);
   }
 
-  let img = document.createElement('img');
-  img.setAttribute('src', `./img/${iconId}.png`);
-  img.setAttribute('id', 'icon');
-  img.setAttribute('alt', weather || 'weatherIcon');
-  tempBox.appendChild(img);
+  let icon = '';
+  if (iconId === '01d') {
+    icon = '<iconify-icon icon="line-md:sunny-filled-loop" style="color: #f5d442;" width="100" height="100"></iconify-icon>'
+    tempBox.innerHTML += icon;
+  }
+  else if (iconId === '01n') {
+    icon = '<iconify-icon icon="line-md:moon-rising-filled-alt-loop" style="color: #f5d142;" width="100" height="100"></iconify-icon>'
+    tempBox.innerHTML += icon;
+  }
+  else {
+    icon = `<img src="icons/${iconId}.png" id="icon" width="100px" height="100px">`
+    tempBox.innerHTML += icon;
+  }
 };
 
 const convertToTime = (timestamp) => {
