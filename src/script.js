@@ -79,12 +79,12 @@ function fetchData(cityName) {
     });
 }
 
-function showDetails() {
+const showDetails = () => {
+  updateImage();
   locationField.innerHTML = locationName;
   weatherField.innerHTML = weather;
   tempField.innerHTML = temp + '&#176;' + 'C';
   feelsLikeField.innerHTML = 'Feels like ' + feels_like_temp + '&deg;C';
-  updateImage();
   sunriseField.innerHTML = sunrise;
   sunsetField.innerHTML = sunset;
   humidityField.innerHTML = humidity + '%';
@@ -107,7 +107,7 @@ function hideDetails() {
   if (icon) document.querySelector('.temp-box').removeChild(icon);
 }
 
-const updateImage = async () => {
+const updateImage = () => {
   let tempBox = document.querySelector('.temp-box'),
     oldImage = document.getElementById('icon');
 
@@ -121,11 +121,11 @@ const updateImage = async () => {
 
   let icon = '';
   if (iconId === '01d') {
-    icon = '<iconify-icon icon="line-md:sunny-filled-loop" style="color: #f5d442;" width="100" height="100"></iconify-icon>'
+    icon = '<iconify-icon icon="line-md:sunny-filled-loop" style="color: #f5d442;" width="100" height="100" id="icon"></iconify-icon>'
     tempBox.innerHTML += icon;
   }
   else if (iconId === '01n') {
-    icon = '<iconify-icon icon="line-md:moon-rising-filled-alt-loop" style="color: #f5d142;" width="100" height="100"></iconify-icon>'
+    icon = '<iconify-icon icon="line-md:moon-rising-filled-alt-loop" style="color: #f5d142;" width="100" height="100" id="icon"></iconify-icon>'
     tempBox.innerHTML += icon;
   }
   else {
