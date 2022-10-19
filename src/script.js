@@ -23,6 +23,7 @@ let pressure = '';
 let weather = '';
 let windSpeed = '';
 let locationName = '';
+let iconId = '';
 
 // use your own API Key
 const KEY = '5313e5a818e901ec38916f96eab76e8d';
@@ -118,20 +119,14 @@ const updateImage = () => {
   if (oldImage) {
     tempBox.removeChild(oldImage);
   }
+  
+  let icon = document.createElement('img');
+  icon.setAttribute('src', `icons/${iconId}.png`);
+  icon.setAttribute('width', '100px');
+  icon.setAttribute('height', '100px');
+  icon.setAttribute('id', 'icon');
 
-  let icon = '';
-  if (iconId === '01d') {
-    icon = '<iconify-icon icon="line-md:sunny-filled-loop" style="color: #f5d442;" width="100" height="100" id="icon"></iconify-icon>'
-    tempBox.innerHTML += icon;
-  }
-  else if (iconId === '01n') {
-    icon = '<iconify-icon icon="line-md:moon-rising-filled-alt-loop" style="color: #f5d142;" width="100" height="100" id="icon"></iconify-icon>'
-    tempBox.innerHTML += icon;
-  }
-  else {
-    icon = `<img src="icons/${iconId}.png" id="icon" width="100px" height="100px">`
-    tempBox.innerHTML += icon;
-  }
+  tempBox.appendChild(icon);
 };
 
 const convertToTime = (timestamp) => {
