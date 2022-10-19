@@ -1,86 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- fonts family -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Weather App</title>
-    <link rel="stylesheet" href="theme-switch.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="theme-switch.css" />
+    <link rel="stylesheet" href="style.css" />
     <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="box">
-        <div class="header">
-            <h1>Weather App</h1>
+      <div class="header">
+        <h1>Weather App</h1>
+      </div>
+
+      <!-- Theme Switch -->
+      <div class="theme-toggle">
+        <label class="switch">
+          <input type="checkbox" onClick="toggleTheme()" checked />
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <!-- input fields -->
+      <div class="upper-box">
+        <div class="input-box">
+          <input
+            type="text"
+            id="city"
+            placeholder="Enter city name"
+            class="input"
+          />
         </div>
 
-        <!-- Theme Switch -->
-        <div class="theme-toggle">
-            <label class="switch">
-                <input type="checkbox" onClick="toggleTheme()" checked>
-                <span class="slider round"></span>
-            </label>
+        <div class="input-box">
+          <button onclick="search()" class="input">Search</button>
         </div>
+      </div>
 
-        <!-- input fields -->
-        <div class="upper-box">
-            <div class="input-box">
-                <input type="text" id="city" placeholder="Enter city name" class="input">
+      <!-- output fields -->
+      <div class="lower-box">
+        <div class="location" id="location">Unknown</div>
+        <div class="details-box weather-box">
+          <div class="temp-box">
+            <div class="temp-details-box">
+              <div class="small-text" id="weather">Weather</div>
+              <div id="temp">0&deg;C</div>
+              <div class="small-text">
+                <span id="feels-like">Feels like 0&deg;C</span>
+              </div>
             </div>
-
-            <div class="input-box">
-                <button onclick="search()" class="input">Search</button>
-            </div>
+          </div>
         </div>
-
-        <!-- output fields -->
-        <div class="lower-box">
-            <div class="location" id="location">
-                Unknown
-            </div>
-            <div class="details-box weather-box">
-                <div class="temp-box">
-                    <div class="temp-details-box">
-                        <div class="small-text" id="weather">
-                            Weather
-                        </div>
-                        <div id="temp">0&deg;C</div>
-                        <div class="small-text">
-                            <span id="feels-like">Feels like 0&deg;C</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="details-box sunrise-sunset">
-                <div>
-                    Sunrise : <span id="sunrise"></span>
-                </div>
-                <div>
-                    Sunset : <span id="sunset"></span>
-                </div>
-            </div>
-            <div class="details-box">
-                Humidity <span id="humidity">___</span>
-            </div>
-            <div class="details-box">
-                Pressure <span id="pressure">___</span>
-            </div>
-            <div class="details-box">
-                Wind Speed <span id="wind">___</span>
-            </div>
+        <div class="details-box sunrise-sunset">
+          <div>Sunrise : <span id="sunrise"></span></div>
+          <div>Sunset : <span id="sunset"></span></div>
         </div>
+        <div class="details-box">Humidity <span id="humidity">___</span></div>
+        <div class="details-box">Pressure <span id="pressure">___</span></div>
+        <div class="details-box">Wind Speed <span id="wind">___</span></div>
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>

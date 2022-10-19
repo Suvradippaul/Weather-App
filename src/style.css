@@ -1,155 +1,155 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
 }
 
 :root {
-    --background: #111827;
-    --text: #d1d5db;
+  --background: #111827;
+  --text: #d1d5db;
 }
 
 body {
-    display: flex;
-    min-height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background: var(--background);
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: var(--background);
 }
 
 body.light-theme {
-    --background: #d1d5db;
-    --text: #111827;
+  --background: #d1d5db;
+  --text: #111827;
 }
 
 .box {
-    border-radius: 10px;
-    background-color: var(--background);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: var(--text);
-    border: 1px solid #374151;
+  border-radius: 10px;
+  background-color: var(--background);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--text);
+  border: 1px solid #374151;
 }
 
 .header {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .upper-box {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 10px;
-    width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  width: 100%;
 }
 
 .input-box {
-    margin: 10px;
+  margin: 10px;
 }
 
 .input {
-    padding: 10px;
-    font-size: 15px;
-    border-radius: 10px;
-    border: none;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: none;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
 .input-box button {
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: #1c64f2;
-    color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #1c64f2;
+  color: white;
 }
 
 .input-box button:hover {
-    cursor: pointer;
-    background-color: #174fc0;
+  cursor: pointer;
+  background-color: #174fc0;
 }
 
 #city {
-    background-color: #374151;
-    color: #9ca3af;
+  background-color: #374151;
+  color: #9ca3af;
 }
 
 #city:focus {
-    outline: none;
-    border-color: #2f71f4;
-    box-shadow: 0 0 1px 1.5px #2f71f4;
+  outline: none;
+  border-color: #2f71f4;
+  box-shadow: 0 0 1px 1.5px #2f71f4;
 }
 
 .lower-box {
-    display: block;
-    width: 100%;
+  display: block;
+  width: 100%;
 }
 
 .location {
-    display: flex;
-    justify-content: center;
-    font-size: xx-large;
-    margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  font-size: xx-large;
+  margin-top: 5px;
 }
 
 .details-box {
-    display: flex;
-    justify-content: space-between;
-    margin: 0px 10px 10px 10px;
-    padding: 10px;
-    /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 10px 10px 10px;
+  padding: 10px;
+  /* border: 1px solid red; */
 }
 
 .weather-box {
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    font-size: x-large;
-    margin: auto;
-    font-family: 'Courier New', Courier, monospace;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  font-size: x-large;
+  margin: auto;
+  font-family: "Courier New", Courier, monospace;
 }
 
 #icon {
-    height: 100px;
-    width: 100px;
+  height: 100px;
+  width: 100px;
 }
 
 .temp-box {
-    display: flex;
-    width: 80%;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  width: 80%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .temp-details-box {
-    font-size: 50px;
-    font-weight: bolder;
+  font-size: 50px;
+  font-weight: bolder;
 }
 
 .small-text {
-    font-size: 15px;
+  font-size: 15px;
 }
 
 .sunrise-sunset {
-    justify-content: space-around;
+  justify-content: space-around;
 }
 
 /* media queries */
 @media only screen and (max-width: 420px) {
-    .upper-box {
-        flex-direction: column;
-    }
+  .upper-box {
+    flex-direction: column;
+  }
 
-    .upper-box input {
-        display: inline-block;
-        width: 100%;
-    }
+  .upper-box input {
+    display: inline-block;
+    width: 100%;
+  }
 
-    .temp-box {
-        flex-direction: column;
-    }
+  .temp-box {
+    flex-direction: column;
+  }
 }
